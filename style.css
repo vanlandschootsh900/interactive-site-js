@@ -4,4 +4,104 @@
     box-sizing: border-box;
 }
 
+#main{
 
+
+    grid-template-areas:
+    'header header header'
+    'nav nav nav'
+    'content content content'
+    ;
+}
+
+header{
+    grid-area: header;
+    height: 100px;
+    font-size: 40px;
+    text-align: center;
+    padding: 10px;
+}
+
+/* nav stuff */
+nav{
+    display: grid;
+    grid-area: nav;
+    gap: 3px;
+    color: white;
+    text-align: center;
+
+    grid-template-areas: 
+    'homenav game1nav game2nav game3nav';
+}   
+
+
+.navbutton{
+    color: white;
+    width: 100%;
+    height: 100%;
+    max-height: fit-content;
+    margin: 0 auto;
+    border: 7px silver ridge;
+    background-color: rgb(77, 72, 72);
+    font-size: 35px;
+    border-radius: 10px;
+}
+
+a:hover{
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-style: italic;
+    transform: scale(1.1);
+}
+a:active{
+    background-color: rgb(77, 72, 72);
+    color: black;
+    border-color: blueviolet;
+    font-style: italic;
+    transform: scale(1.1);
+    color: white;
+}
+a:visited{
+    text-decoration: none;
+    
+}
+a:link{
+    text-decoration: none;
+}
+
+#homenav{
+    grid-area: homenav;
+}
+
+#game1nav{
+    grid-area: game1nav;
+}
+
+#game2nav{
+    grid-area: game2nav;
+}
+
+#game3nav{
+    grid-area: game3nav;
+}
+/* NAV STUFF END HERE */
+
+/* Game stuff start here */
+#content{
+    grid-area: content;
+}
+
+
+
+@media (max-width: 650px) {
+
+/* NAV STUFF HERE */
+nav{
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    'homenav game2nav'
+    'game1nav game3nav'
+    ;
+}
+    
+}
