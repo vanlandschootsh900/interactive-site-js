@@ -6,15 +6,18 @@
 
 #main{
     display: grid;
-    grid-template-columns: 1fr 4fr 4fr;
+    grid-template-columns:4fr 4fr;
     gap: 5px;
     grid-template-areas:
-    'header header header'
-    'nav nav nav'
-    'side content content'
+    'header header'
+    'nav nav'
+    'content-area content-area'
+    'footer footer'
     
     ;
 }
+
+
 
 header{
     grid-area: header;
@@ -31,6 +34,7 @@ nav{
     gap: 3px;
     color: white;
     text-align: center;
+    
 
     grid-template-areas: 
     'homenav game1nav game2nav game3nav';
@@ -89,28 +93,87 @@ a:link{
 /* NAV STUFF END HERE */
 
 
-/* SIDE STUFF HERE */
-aside{
-    grid-area: side;
-    border: silver 5px ridge;
-    height: 100vh;
-    width: 100%;
-    background-color: aqua;
-    
-}
-
-
 
 
 /* Game stuff start here */
 #content{
-    grid-area: content;
+    grid-area: content-area;
+
+    margin: 0 auto;
     background-color: black;
+    width: 80%;
+    height: 80vh;
 }
 
 
 
+
+
+
+
+
+/* FOOTER STARTS HERE */
+footer{
+    display: grid;
+    grid-area: footer;
+    border: silver 5px ridge;
+    height: 50px;
+    width: 100%;
+    background-color:rgb(77, 72, 72) ;
+    color: white;
+    
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 4fr 1fr;
+    
+    grid-template-areas: 
+    'footertext darkbutton'
+    'footertext lightbutton'
+    ;
+}
+
+#footertext{
+    grid-area: footertext;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#darkmode{
+    grid-area: darkbutton;
+    text-align: center;
+}
+#lightmode{
+    grid-area: lightbutton;
+    text-align: center;
+
+}
+.footerbuttons{
+    border: none;
+    border-radius: 100px;    
+    margin: 0 auto;
+    width: 25%;
+}
+.footerbuttons:hover{
+    background-color: rgb(32, 183, 225);
+}
+
+/* footer ENDS HERE */
+
+
 @media (max-width: 650px) {
+
+    #main{
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+        'header'
+        'nav'
+        'content-area'
+        'footer'
+        ;
+    }
+
+    
 
 /* NAV STUFF HERE */
 nav{
@@ -120,5 +183,14 @@ nav{
     'game1nav game3nav'
     ;
 }
+/* NAV STUFF ENDS HERE */
+
+/* FOOTER STUFF STARTS */
+.footerbuttons{
+    border: none;
+    border-radius: 100px;    
+    margin: 0 auto;
+    width: 90%;
+}/* FOOTER STUFF ENDS */
     
 }
