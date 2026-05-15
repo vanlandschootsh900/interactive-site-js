@@ -31,6 +31,12 @@
             align-items: center;
         }
 
+        #tictacbutton{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 10px;
+        }
+
         #restart-button{
             display: block;
             margin: 0 auto;
@@ -68,12 +74,11 @@
 </head>
 <body>
     <div id="main">
-
         <header>
             <p>Shay's Website</p>
         </header>
 
-        <!-- links to other pages -->
+        <!-- Nav Starts here-->
         <nav>
             <a id="homenav" class="navbutton" href="home.html">Home</a>
 
@@ -83,14 +88,16 @@
 
             <a id="games3nav" class="navbutton" href="tictactoe.html">Tic Tac Toe</a>
         </nav>
-
+        <!-- Nav ends here -->
 
         <!-- games stuff STARTS HERE -->
         <div id="content">
+
             <div id="tictac-title">
                 <h1>Tic Tac Toe</h1>
             </div>
 
+            <!-- game board starts here -->
             <div id="tictac-board">
                 <div class="square" id="square0"></div>
                 <div class="square" id="square1"></div>
@@ -102,16 +109,22 @@
                 <div class="square" id="square7"></div>
                 <div class="square" id="square8"></div>
             </div>
-            
+            <!-- game board ends here  -->
+
+            <!-- buttons start here -->
+            <div id="tictacbutton">
+
             <div id="buttonwhofirst">
-                <button id="whofirst">Who first:X</button>
+                <button id="whofirst">Who's First:X</button>
             </div>
 
             <div id="endgame">
                 <button id="restart-button">Reset</button>
             </div>
-            
+            </div>
+
         </div>
+        <!-- button end here -->
         <!-- Game STUFF END HERE -->
 
         <footer><!-- FOOTER START HERE -->
