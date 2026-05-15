@@ -1,10 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Website I use to help me make this  -->
+    <!-- https://medium.com/@canankorkut1/how-to-create-a-tic-tac-toe-with-html-css-and-javascript-10a25fddd356-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe page</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        #tictac-title{
+            text-align: center;
+        }
+
+        #tictac-board{
+            margin: 0 auto;
+            width: 375px;
+            height: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+        }
+        .square{
+            width: 120px;
+            height: 120px;
+            border: 1px solid #d3d3d3;
+            background-color: #f5f5f5;
+            font-size: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #restart-button{
+            display: block;
+            margin: 0 auto;
+            height: 40px;
+            width: 150px;
+            background-color: #FFFFFF;
+            border: 1px solid #000000;
+            border-radius: 40px;
+            font-size: 18px;
+        }
+
+        #whofirst{
+            display: block;
+            margin: 0 auto;
+            height: 40px;
+            width: 150px;
+            background-color: #FFFFFF;
+            border: 1px solid #000000;
+            border-radius: 40px;
+            font-size: 18px;
+        }
+
+        .square:hover{
+            background-color: #FFFFE0;
+        }
+        #restart-button:hover {
+            background-color: #000000;
+            color: #FFFFFF;
+        }
+        #whofirst:hover {
+            background-color: #000000;
+            color: #FFFFFF;
+        }
+    </style>
 </head>
 <body>
     <div id="main">
@@ -27,7 +87,30 @@
 
         <!-- games stuff STARTS HERE -->
         <div id="content">
+            <div id="tictac-title">
+                <h1>Tic Tac Toe</h1>
+            </div>
 
+            <div id="tictac-board">
+                <div class="square" id="square0"></div>
+                <div class="square" id="square1"></div>
+                <div class="square" id="square2"></div>
+                <div class="square" id="square3"></div>
+                <div class="square" id="square4"></div>
+                <div class="square" id="square5"></div>
+                <div class="square" id="square6"></div>
+                <div class="square" id="square7"></div>
+                <div class="square" id="square8"></div>
+            </div>
+            
+            <div id="buttonwhofirst">
+                <button id="whofirst">Who first:X</button>
+            </div>
+
+            <div id="endgame">
+                <button id="restart-button">Reset</button>
+            </div>
+            
         </div>
         <!-- Game STUFF END HERE -->
 

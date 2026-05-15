@@ -99,17 +99,11 @@ a:link{
 #content{
     grid-area: content-area;
 
-    margin: 0 auto;
-    background-color: black;
-    width: 80%;
-    height: 80vh;
+    /* margin: 0 auto; */
+    /* background-color: black; */
+    /* width: 80%;
+    height: 80vh; */
 }
-
-
-
-
-
-
 
 
 /* FOOTER STARTS HERE */
