@@ -116,6 +116,7 @@ footer{
     background-color:rgb(77, 72, 72) ;
     color: white;
     
+    
     justify-content: center;
     align-items: center;
     grid-template-columns: 4fr 1fr;
@@ -130,11 +131,13 @@ footer{
     grid-area: footertext;
     text-align: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 15px;
 }
 
 #darkmode{
     grid-area: darkbutton;
     text-align: center;
+    
 }
 #lightmode{
     grid-area: lightbutton;
@@ -145,7 +148,7 @@ footer{
     border: none;
     border-radius: 100px;    
     margin: 0 auto;
-    width: 25%;
+    width: 50%;
 }
 .footerbuttons:hover{
     background-color: rgb(32, 183, 225);
