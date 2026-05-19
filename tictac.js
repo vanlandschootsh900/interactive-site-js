@@ -3,22 +3,20 @@
 // // Interactive Site
 
 
-// This will run the HTML so the jS can work sencse the link to the JS is in the head
-window.addEventListener('DOMContentLoaded', ()=>{
-
-    // used array becuse it returns it a node list which is an array-like so its easier to turn in to a array
-    const box = Array.from(document.querySelectorAll('.box'));
+window.addEventListener('DOMContentLoaded', () => {
+    const tiles = Array.from(document.querySelectorAll('.tile'));
     const playerDisplay = document.querySelector('.display-player');
-    const resetbtn = document.querySelector('#reset');
+    const resetButton = document.querySelector('#reset');
     const announcer = document.querySelector('.announcer');
 
-    let board = ['','','','','','','','',''];
+    let board = ['', '', '', '', '', '', '', '', ''];
     let currentPlayer = 'X';
-    let isGameAvctive = true;
+    let isGameActive = true;
 
-    const playerx_won = 'PLAYERX_WON ';
-    const playero_won = 'PLAYER0_WON ';
-    const tie = 'tie';
+    const PLAYERX_WON = 'PLAYERX_WON';
+    const PLAYERO_WON = 'PLAYERO_WON';
+    const TIE = 'TIE';
+
 
     const winningConditions = [
         [0, 1, 2],
@@ -32,8 +30,8 @@ window.addEventListener('DOMContentLoaded', ()=>{
     ];
 
     function handleResultValidation() {
-        let roundWon = false
-        for(let i = 0; i <= 7; i++) {
+        let roundWon = false;
+        for (let i = 0; i <= 7; i++) {
             const winCondition = winningConditions[i];
             const a = board[winCondition[0]];
             const b = board[winCondition[1]];
@@ -41,22 +39,23 @@ window.addEventListener('DOMContentLoaded', ()=>{
             if (a === '' || b === '' || c === '') {
                 continue;
             }
-            if (a == b && b === c) {
+            if (a === b && b === c) {
                 roundWon = true;
                 break;
             }
         }
 
     if (roundWon) {
-            announce(currentPlayer ==='X' ? PLAYERX_WON : PLAYER0_WON);
-            isGameAvctive = false;
+            announce(currentPlayer === 'X' ? PLAYERX_WON : PLAYERO_WON);
+            isGameActive = false;
             return;
         }
+
     if (!board.includes(''))
-        announce(tie);
+        announce(TIE);
     }
 
-     const announce = (type) => {
+    const announce = (type) => {
         switch(type){
             case PLAYERO_WON:
                 announcer.innerHTML = 'Player <span class="playerO">O</span> Won';
@@ -64,22 +63,21 @@ window.addEventListener('DOMContentLoaded', ()=>{
             case PLAYERX_WON:
                 announcer.innerHTML = 'Player <span class="playerX">X</span> Won';
                 break;
-            case tie:
+            case TIE:
                 announcer.innerText = 'Tie';
         }
         announcer.classList.remove('hide');
     };
 
-    const isValidAction = (box) =>{
-        if (box.innerText === 'X' || box.innerText === 'O'){
+    const isValidAction = (tile) => {
+        if (tile.innerText === 'X' || tile.innerText === 'O'){
             return false;
         }
 
-        return true
+        return true;
     };
 
-
-    const updateBoard = (index) => {
+    const updateBoard =  (index) => {
         board[index] = currentPlayer;
     }
 
@@ -90,42 +88,37 @@ window.addEventListener('DOMContentLoaded', ()=>{
         playerDisplay.classList.add(`player${currentPlayer}`);
     }
 
-
-    const userAction = (box, index) =>{
-        if(isValidAction(box) && isGameAvctive) {
-            box.innerText = currentPlayer;
-            box.classlist.add(`player${currentPlayer}`);
+    const userAction = (tile, index) => {
+        if(isValidAction(tile) && isGameActive) {
+            tile.innerText = currentPlayer;
+            tile.classList.add(`player${currentPlayer}`);
             updateBoard(index);
             handleResultValidation();
             changePlayer();
         }
     }
-
-    const resetboard = () =>{
-        board = ['','','','','','','','',''];
-        isGameAvctive = true;
+    
+    const resetBoard = () => {
+        board = ['', '', '', '', '', '', '', '', ''];
+        isGameActive = true;
         announcer.classList.add('hide');
 
         if (currentPlayer === 'O') {
             changePlayer();
         }
-        box.forEach(box => {
-            box.innerText = '';
-            box.classList.remove('playerX');
-            box.classList.remove('playerO');
+
+        tiles.forEach(tile => {
+            tile.innerText = '';
+            tile.classList.remove('playerX');
+            tile.classList.remove('playerO');
         });
     }
 
-    box.forEach((box, index) => {
-        box.addEventListener('click', () => userAction(box, index));
+    tiles.forEach( (tile, index) => {
+        tile.addEventListener('click', () => userAction(tile, index));
     });
 
-
-
-    resetbtn.addEventListener('click', resetboard);
+    resetButton.addEventListener('click', resetBoard);
 });
-
-
-
 
 

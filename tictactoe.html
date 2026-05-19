@@ -2,45 +2,50 @@
 <html lang="en">
 <head>
     <!-- video I use to help me make this  -->
-    <!-- https://www.youtube.com/watch?v=B3pmT7Cpi24-->
+    <!-- https://www.youtube.com/watch?v=B3pmT7Cpi24 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe page</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .background{
-            background-color: #121818;
+
+        .content {
+        background-color: #12181B;
+        height: 100vh;
+        padding-top: 1px;
         }
 
-        .title{
-            color: black;
+        .title {
+            color: var('--tictac-colortext');
             text-align: center;
             font-size: 40px;
-            margin-top: 10px;
+            margin-top: 10%;
         }
 
         .display {
-            color: black;
-            text-align: center;
+            color: white;
             font-size: 25px;
+            text-align: center;
             margin-top: 1em;
             margin-bottom: 1em;
         }
 
-        .hide{
+        .hide {
             display: none;
         }
 
         .container {
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(3, 33%);
-            grid-template-rows: repeat(3, 33%);
+            grid-template-columns: 33% 33% 33%;
+            grid-template-rows: 33% 33% 33%;
             max-width: 300px;
+
         }
-        
-        .box{
-            border: 1px solid black;
+
+        .tile {
+            border: 1px solid;
+            border-color: var('--tictac-border');
             min-width: 100px;
             min-height: 100px;
             display: flex;
@@ -50,12 +55,12 @@
             cursor: pointer;
         }
 
-        .playerX{
-            color: aquamarine;
+        .playerX {
+            color: #09C372;
         }
 
-        .playerO{
-            color: darkorchid;
+        .playerO {
+            color: #498AFB;
         }
 
         .controls {
@@ -66,8 +71,7 @@
             margin-top: 1em;
         }
 
-        #reset{
-            background-color: red;
+        .controls button {
             color: white;
             padding: 8px;
             border-radius: 8px;
@@ -77,10 +81,15 @@
             cursor: pointer;
         }
 
+        .restart {
+            background-color: #498AFB;
+        }
+
+        #reset {
+            background-color: #FF3860;
+        }
 
     </style>
-    <!-- Java Scripts -->
-     <script src="tictac.js"></script>
 
 
 </head>
@@ -106,35 +115,35 @@
 
         <!-- Games Stuff Start Here -->
         <div id="content">
-            <section class="title">
-                <h1>Tic Tac Toe</h1>
-            </section>
-            
-            <section class="display">
-                player <span class="display-player playerX">X</span>'s turn
-            </section>
 
-            <section class="container">
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-            </section>
+            <!-- <main class="background"> -->
 
-            <section class="display announcer hide"></section>
+                    <section class="title">
+                        <h1>Tic Tac Toe</h1>
+                    </section>
 
-            <section class="controls">
-                <button id="reset">Reset</button>
-            </section>
+                    <section class="display">
+                        Player <span class="display-player playerX">X</span>'s turn
+                    </section>
 
+                    <section class="container">
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                        <div class="tile"></div>
+                    </section>
 
+                    <section class="display announcer hide"></section>
 
-
+                    <section class="controls">
+                        <button id="reset">Reset</button>
+                    </section>
+                <!-- </main> -->
 
         </div>
         <!--Game stuff Ends here-->

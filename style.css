@@ -4,6 +4,19 @@
     box-sizing: border-box;
 }
 
+:root{
+    --dark-mode-color:rgba(37, 35, 35, 1);
+    --light-mode-color:rgba(255, 255, 255, 1);
+
+
+    /* Tic Tac backgound switch Stuff Ends Here*/
+    --tictac-colortext:white;
+    --tictac-border:white;
+    /*Tic Tac backgound switch Stuff Ends Here */
+}
+
+
+
 #main{
     display: grid;
     grid-template-columns:4fr 4fr;
