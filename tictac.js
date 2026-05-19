@@ -17,7 +17,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const PLAYERO_WON = 'PLAYERO_WON';
     const TIE = 'TIE';
 
-
     const winningConditions = [
         [0, 1, 2],
         [3, 4, 5],
