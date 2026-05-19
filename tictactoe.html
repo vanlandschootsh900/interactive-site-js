@@ -8,8 +8,81 @@
     <title>Tic Tac Toe page</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        .background{
+            background-color: #121818;
+        }
+
+        .title{
+            color: black;
+            text-align: center;
+            font-size: 40px;
+            margin-top: 10px;
+        }
+
+        .display {
+            color: black;
+            text-align: center;
+            font-size: 25px;
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .container {
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 33%);
+            grid-template-rows: repeat(3, 33%);
+            max-width: 300px;
+        }
+        
+        .box{
+            border: 1px solid black;
+            min-width: 100px;
+            min-height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            cursor: pointer;
+        }
+
+        .playerX{
+            color: aquamarine;
+        }
+
+        .playerO{
+            color: darkorchid;
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1em;
+        }
+
+        #reset{
+            background-color: red;
+            color: white;
+            padding: 8px;
+            border-radius: 8px;
+            border: none;
+            font-size: 20px;
+            margin-left: 1em;
+            cursor: pointer;
+        }
+
 
     </style>
+    <!-- Java Scripts -->
+     <script src="tictac.js"></script>
+
+
 </head>
 <body>
     <div id="main">
@@ -29,13 +102,47 @@
         </nav>
         <!-- Nav ends here -->
 
+
+
         <!-- Games Stuff Start Here -->
         <div id="content">
+            <section class="title">
+                <h1>Tic Tac Toe</h1>
+            </section>
+            
+            <section class="display">
+                player <span class="display-player playerX">X</span>'s turn
+            </section>
 
-        </div><!--Game stuff Ends here-->
+            <section class="container">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </section>
+
+            <section class="display announcer hide"></section>
+
+            <section class="controls">
+                <button id="reset">Reset</button>
+            </section>
+
+
+
+
+
+        </div>
+        <!--Game stuff Ends here-->
         
 
-        <footer><!-- FOOTER START HERE -->
+
+        <!-- FOOTER START HERE -->
+        <footer>
             <div id="footertext">
                 <p>I Made this Website for a end of the year school project. If theres bug I'm sorry</p>
             </div>
@@ -44,13 +151,16 @@
 
             <button id="lightmode" class="footerbuttons">Light Mode</button>
 
-        </footer><!-- FOOTER ENDS HERE -->
+        </footer>
+        <!-- FOOTER ENDS HERE -->
 
     </div><!-- main div ends here -->
+
 
     <!-- SCRIPTS START HERE  -->
     <script src="main.js"></script>
     <script src="tictac.js"></script>
+
     
 </body>
 </html>
