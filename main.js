@@ -16,6 +16,11 @@ function darkButton (){
         root.style.setProperty('--tictac-colortext', 'white');
         root.style.setProperty('--tictac-border', 'white');
         // TIC TAC TOE
+
+        // Snake
+        root.style.setProperty('--snake-colortext', 'white')
+        root.style.setProperty('--snake-border', 'white')
+        // Snake
     });
 }
 
@@ -30,6 +35,10 @@ function lightButton (){
         root.style.setProperty('--tictac-border', 'black');
         // TIC TAC TOE
 
+        // Snake
+        root.style.setProperty('--snake-colortext', 'black')
+        root.style.setProperty('--snake-border', 'black')
+        // Snake
     });
 }
 

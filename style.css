@@ -9,10 +9,16 @@
     --light-mode-color:rgba(255, 255, 255, 1);
 
 
-    /* Tic Tac backgound switch Stuff Ends Here*/
+    /* Tic Tac backgound switch Stuff Start Here*/
     --tictac-colortext:white;
     --tictac-border:white;
     /*Tic Tac backgound switch Stuff Ends Here */
+
+    /* Snake backgound switch Stuff Starts Here */
+    --snake-colortext:white;
+    --snake-border:white;
+    /* Snake backgound switch Stuff Ends Here */
+    
 }
 
 
